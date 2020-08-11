@@ -1,0 +1,18 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: terraria-world-1
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: terraria
+  chart:
+    git: git@github.com:ammilam/terraria-world-1
+    path: chart
+    ref: master
+values:
+
+  #valuesFrom:
+  #- chartFileRef:
+  #    path: ../chart/values.yaml
