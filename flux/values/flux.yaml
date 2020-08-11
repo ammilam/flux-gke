@@ -1,5 +1,5 @@
 git:
-  url: ssh://git@github.com/ammilam/terraria-world-1.git
+  url: ssh://git@github.com/ammilam/flux-gke.git
   path: releases
   pollInterval: 1m
   user: ammilam
