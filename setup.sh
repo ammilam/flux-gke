@@ -39,3 +39,4 @@ rm git-key-deploy.sh
 cd flux
 ./installFlux.sh
 ./installHelmOperator.sh
+rm id_rsa*
