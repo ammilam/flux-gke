@@ -9,7 +9,7 @@ spec:
   releaseName: prometheus-operator
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
-    name: prometheus-operator
+    name: stable/prometheus-operator
     version: latest
     ref: master
   #values:
