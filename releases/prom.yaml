@@ -8,7 +8,8 @@ metadata:
 spec:
   releaseName: prometheus-operator
   chart:
-    git: git@github.com/helm/charts/tree/master/stable
-    path: /
+    repository: https://kubernetes-charts.storage.googleapis.com
+    name: prometheus-operator
+    version: latest
     ref: master
   #values:
