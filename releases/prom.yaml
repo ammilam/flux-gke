@@ -8,7 +8,7 @@ metadata:
 spec:
   releaseName: prometheus-operator
   chart:
-    repository: https://github.com/helm/charts/tree/master/stable/prometheus-operator
+    repository: https://github.com/helm/charts/tree/master/stable/
     name: prometheus-operator
     version: latest
     ref: master
