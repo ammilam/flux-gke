@@ -1,0 +1,14 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: terraria
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: prometheus-operator
+  chart:
+    git: git@github.com/helm/charts/tree/master/stable
+    path: /
+    ref: master
+  #values:
