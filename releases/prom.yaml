@@ -1,7 +1,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: terraria
+  name: prometheus-operator
   namespace: default
   annotations:
     fluxcd.io/automated: "true"
