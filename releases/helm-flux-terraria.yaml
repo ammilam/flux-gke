@@ -20,7 +20,7 @@ spec:
 
     image:
       repository: ryshe/terraria
-      tag: latest
+      tag: vanilla-1.4.0.5
       pullPolicy: Always
 
     imagePullSecrets: []
