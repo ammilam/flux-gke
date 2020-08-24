@@ -25,11 +25,9 @@ spec:
           org_name: Main Org.
           org_role: Viewer
     prometheus:
-      service:
-        type: LoadBalancer
       ingress:
-        enabled: false
-        hosts:
+        enabled: true
+        hosts: test.com
         paths:
           - /
 
