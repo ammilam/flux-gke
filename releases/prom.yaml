@@ -69,10 +69,7 @@ spec:
         prometheusOperator: true
         time: true
 
-      ## Runbook url prefix for default rules
-      runbookUrl: https://github.com/kubernetes-monitoring/kubernetes-mixin/tree/master/runbook.md#
-      ## Reduce app namespace alert scope
-      appNamespacesTarget: ".*"
+     
 
       ## Labels for default rules
       labels: {}
@@ -117,7 +114,7 @@ spec:
 
       ## Deploy alertmanager
       ##
-      enabled: true
+      enabled: false
 
       ## Api that prometheus will use to communicate with alertmanager. Possible values are v1, v2
       ##
@@ -127,7 +124,7 @@ spec:
       ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
       ##
       serviceAccount:
-        create: true
+        create: false
         name: ""
         annotations: {}
 
@@ -196,7 +193,7 @@ spec:
       #       {{ end }}
 
       ingress:
-        enabled: true
+        enabled: false
 
         annotations: {}
 
