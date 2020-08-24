@@ -11,11 +11,12 @@ spec:
     version: 8.5.8
   values:
     grafana:
+      service:
+        type: LoadBalancer
       #enabled: false
       ingress:
-        enabled: true
+        enabled: false
         hosts:
-          - example.com
         paths:
           - /
       grafana.ini:
@@ -27,9 +28,8 @@ spec:
       service:
         type: LoadBalancer
       ingress:
-        enabled: true
+        enabled: false
         hosts:
-          - prometheus-den3sbx.davita.com
         paths:
           - /
 
