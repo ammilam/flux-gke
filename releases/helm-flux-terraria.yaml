@@ -3,7 +3,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: terraria
-  namespace: default
+  namespace: terraria
   annotations:
     fluxcd.io/automated: "true"
 spec:
