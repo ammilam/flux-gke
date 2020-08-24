@@ -5,7 +5,7 @@ metadata:
   name: terraria
   namespace: terraria
   annotations:
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
 spec:
   releaseName: terraria
   chart:
@@ -14,13 +14,13 @@ spec:
     ref: master
   values:
     worldUrl: https://github.com/ammilam/terraria-world-files/raw/master/
-    worldName: worlds_World_1
+    worldName: worlds_World_1.wld
     #worldName: BuildersWorkshop_3Journey
     replicaCount: 1
 
     image:
       repository: ryshe/terraria
-      tag: vanilla-1.4.0.5
+      tag: latest
       pullPolicy: Always
 
     imagePullSecrets: []
