@@ -1432,7 +1432,7 @@ spec:
         loadBalancerSourceRanges: []
         ## Service type
         ##
-        type: LoadBlancer
+        type: LoadBalancer
 
         sessionAffinity: ""
 
