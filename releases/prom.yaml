@@ -24,6 +24,8 @@ spec:
           org_name: Main Org.
           org_role: Viewer
     prometheus:
+      service:
+        type: LoadBalancer
       ingress:
         enabled: true
         hosts:

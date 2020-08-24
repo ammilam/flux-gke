@@ -1,21 +1,19 @@
 #! /bin/bash
 
 #sets environment variables
-export REGION=us-east1
+export REGION=us-west1
 export ZONE=$REGION-b
-export NAME=terraria-world-1
-export WORLD=worlds_World_1.wld
-export COMPUTE_ENGINE_SA_EMAIL=$(gcloud iam service-accounts list --filter="name:Compute Engine default service account" --format "value(email)")
-export REPO=terraria-world-1
-export USERNAME=ammilam
+export NAME=terraria
 #sets github specific environment variables to be used later
 read -p 'GitHub Repo: ' REPO
 read -p 'GitHub Username: ' USERNAME
 read -sp 'GitHub Password: ' PASSWORD
 
 
+#gcloud container --project $DEVSHELL_PROJECT_ID clusters create $NAME-$REGION --zone $ZONE
 
 #creates the flux namespace and generates an ssh key
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 helm repo add fluxcd https://charts.fluxcd.io
 kubectl create namespace flux
 ssh-keygen -t rsa -N '' -f ./flux/id_rsa -C flux <<< y
