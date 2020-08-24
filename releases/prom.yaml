@@ -11,7 +11,7 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: prometheus-operator
-    version: 8.14.0
+   # version: 8.14.0
   values:
   # Default values for prometheus-operator.
 # This is a YAML-formatted file.
@@ -512,7 +512,6 @@ spec:
         ## If true, Grafana Ingress will be created
         ##
         enabled: true
-        type: LoadBalancer
 
         ## Annotations for Grafana Ingress
         ##
