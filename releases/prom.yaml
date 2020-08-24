@@ -1,14 +1,42 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: prometheus-operator
   namespace: monitoring
-  annotations:
-    fluxcd.io/automated: "true"
 spec:
   releaseName: prometheus-operator
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: prometheus-operator
-    version: 8.5.8  
+    version: 8.5.8
+  values:
+    grafana:
+      #enabled: false
+      ingress:
+        enabled: true
+        hosts:
+          - example.com
+        paths:
+          - /
+      grafana.ini:
+        auth.anonymous:
+          enabled: true
+          org_name: Main Org.
+          org_role: Viewer
+    prometheus:
+      ingress:
+        enabled: true
+        hosts:
+          - prometheus-den3sbx.davita.com
+        paths:
+          - /
+
+      prometheusSpec:
+        additionalScrapeConfigs:
+        replicas: 1
+        externalLabels:
+          cluster: terraria
+       
+      server:
+        global:
+          scrape_timeout: 30s
