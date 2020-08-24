@@ -25,15 +25,15 @@ spec:
           org_name: Main Org.
           org_role: Viewer
     prometheus:
-      service:
-        type: LoadBalancer
       ingress:
-        enabled: false
+        enabled: true
         hosts:
         paths:
           - /
 
       prometheusSpec:
+        service:
+          type: LoadBalancer
         additionalScrapeConfigs:
         replicas: 1
         externalLabels:
