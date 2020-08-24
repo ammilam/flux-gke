@@ -511,7 +511,8 @@ spec:
       ingress:
         ## If true, Grafana Ingress will be created
         ##
-        enabled: false
+        enabled: true
+        type: LoadBalancer
 
         ## Annotations for Grafana Ingress
         ##
@@ -1432,7 +1433,7 @@ spec:
         loadBalancerSourceRanges: []
         ## Service type
         ##
-        type: ClusterIP
+        type: LoadBlancer
 
         sessionAffinity: ""
 
@@ -1846,7 +1847,7 @@ spec:
         remoteWrite: []
         # - url: http://remote1/push
 
-        ## Enable/Disable Grafana dashboards provisioning for prometheus remote write feature
+        ## Enable/Disable  dashboards provisioning for prometheus remote write feature
         remoteWriteDashboards: false
 
         ## Resource limits & requests
