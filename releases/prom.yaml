@@ -11,7 +11,7 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: prometheus-operator
-    version: 8.14.0
+    version: 8.5.8
   values:
   # Default values for prometheus-operator.
 # This is a YAML-formatted file.
@@ -196,7 +196,7 @@ spec:
       #       {{ end }}
 
       ingress:
-        enabled: false
+        enabled: true
 
         annotations: {}
 
@@ -499,7 +499,7 @@ spec:
     ## Using default values from https://github.com/helm/charts/blob/master/stable/grafana/values.yaml
     ##
     grafana:
-      enabled: false
+      enabled: true
       namespaceOverride: ""
 
       ## Deploy default dashboards.
@@ -511,14 +511,16 @@ spec:
       ingress:
         ## If true, Grafana Ingress will be created
         ##
-        enabled: false
+        enabled: true
 
         ## Annotations for Grafana Ingress
         ##
-        annotations: {}
-          # kubernetes.io/ingress.class: nginx
-          # kubernetes.io/tls-acme: "true"
-
+        annotations:
+          kubernetes.io/ingress.class: nginx
+          nginx.ingress.kubernetes.io/rewrite-target: /$2
+          #nginx.ingress.kubernetes.io/auth-type: basic
+          #nginx.ingress.kubernetes.io/auth-secret: basic-auth
+          #nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
         ## Labels to be added to the Ingress
         ##
         labels: {}
@@ -528,10 +530,11 @@ spec:
         ##
         # hosts:
         #   - grafana.domain.com
-        hosts: []
+        hosts:
+        - example.com
 
         ## Path for grafana ingress
-        path: /
+        path: / #grafana(/|$)(.*)
 
         ## TLS configuration for grafana Ingress
         ## Secret must be manually created in the namespace
