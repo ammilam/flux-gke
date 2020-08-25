@@ -497,7 +497,7 @@ spec:
         ##
         # hosts:
         #   - grafana.domain.com
-        hosts: http://${EXTERNAL_IP}:9090
+        hosts: localhost
 
         ## Path for grafana ingress
         path: /
