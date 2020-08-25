@@ -1467,19 +1467,21 @@ spec:
       ingress:
         enabled: true
         annotations: {}
-        labels: {}
+        labels: {
+          app: prometheus
+        }
 
         ## Hostnames.
         ## Must be provided if Ingress is enabled.
         ##
         hosts:
-        - http://34.74.21.244/prometheus
+        - http://34.74.21.244/
         #hosts: []
 
         ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
         ##
         paths:
-        - /
+        - /prometheus
 
         ## TLS configuration for Prometheus Ingress
         ## Secret must be manually created in the namespace
