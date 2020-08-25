@@ -1377,7 +1377,6 @@ spec:
       service:
         annotations: {}
         labels: {}
-        clusterIP: ""
 
         ## Port for Prometheus Service to listen on
         ##
@@ -1429,7 +1428,7 @@ spec:
         loadBalancerSourceRanges: []
         ## Service type
         ##
-        type: ClusterIP
+        type: LoadBalancer
 
       ## Configure pod disruption budgets for Prometheus
       ## ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/#specifying-a-poddisruptionbudget
