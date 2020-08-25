@@ -1408,7 +1408,7 @@ spec:
       ## Configuration for creating a separate Service for each statefulset Prometheus replica
       ##
       servicePerReplica:
-        enabled: true
+        enabled: false
         annotations: {}
 
         ## Port for Prometheus Service per replica to listen on
@@ -1465,7 +1465,7 @@ spec:
         #   - thanos-gateway.domain.com
 
       ingress:
-        enabled: false
+        enabled: true
         annotations: {}
         labels: {}
 
@@ -1473,7 +1473,7 @@ spec:
         ## Must be provided if Ingress is enabled.
         ##
         hosts:
-        - prometheus.domain.com
+        - http://34.74.21.244/prometheus
         #hosts: []
 
         ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
