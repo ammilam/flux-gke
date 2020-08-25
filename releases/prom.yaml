@@ -1566,10 +1566,10 @@ spec:
       ##
       prometheusSpec:
         service:
-        ports:
-        - port: 9090
-          targetPort: 9090
-        type: LoadBalancer
+          ports:
+          - port: 9090
+            targetPort: 9090
+          type: LoadBalancer
         ## If true, pass --storage.tsdb.max-block-duration=2h to prometheus. This is already done if using Thanos
         ##
         disableCompaction: false
