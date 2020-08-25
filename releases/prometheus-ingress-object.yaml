@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: monitoring
+  name: prometheus-ingress
   namespace: monitoring
   annotations:
     ingress.kubernetes.io/whitelist-source-range: 10.0.0.0/16 # change this range to admin IPs
