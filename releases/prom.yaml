@@ -26,7 +26,7 @@ spec:
           org_role: Viewer
     prometheus:
       ingress:
-        enabled: true
+        enabled: false
         hosts: test.com
         paths:
           - /
