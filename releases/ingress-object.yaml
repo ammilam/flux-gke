@@ -13,8 +13,8 @@ spec:
       - backend:
           serviceName: prometheus-operator-prometheus
           servicePort: 9090
-        path: /prometheus
-      - backend:
-          serviceName: prometheus-operator-grafana
-          servicePort: 80
-        path: /grafana
+        path: /
+      #- backend:
+      #    serviceName: prometheus-operator-grafana
+      #    servicePort: 80
+      #  path: /grafana
