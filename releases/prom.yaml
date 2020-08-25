@@ -1384,7 +1384,7 @@ spec:
         port: 9090
 
         ## To be used with a proxy extraContainer port
-        #targetPort: 9090
+        targetPort: 9090
 
         ## List of IP addresses at which the Prometheus server service is available
         ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -1465,7 +1465,7 @@ spec:
         #   - thanos-gateway.domain.com
 
       ingress:
-        enabled: true
+        enabled: false
         annotations: {}
         labels: {}
 
