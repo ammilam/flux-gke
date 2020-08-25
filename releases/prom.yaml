@@ -1375,7 +1375,7 @@ spec:
       ## Configuration for Prometheus service
       ##
       service:
-        type: NodePort
+        type: clusterIP
         annotations: {}
         labels: {}
 
