@@ -1,12 +1,13 @@
 #! /bin/bash
 
 #sets environment variables
-export REGION=us-west1
-export ZONE=$REGION-b
+
 export NAME=terraria
+export REPO=flux-gke
+export USERNAME=ammilam
 #sets github specific environment variables to be used later
-read -p 'GitHub Repo: ' REPO
-read -p 'GitHub Username: ' USERNAME
+#read -p 'GitHub Repo: ' REPO
+#read -p 'GitHub Username: ' USERNAME
 read -sp 'GitHub Password: ' PASSWORD
 
 
@@ -18,6 +19,13 @@ helm repo add fluxcd https://charts.fluxcd.io
 kubectl create namespace flux
 ssh-keygen -t rsa -N '' -f ./flux/id_rsa -C flux <<< y
 kubectl create secret generic flux-ssh --from-file=identity=./flux/id_rsa -n flux
+
+kubectl create clusterrolebinding cluster-admin-binding \
+  --clusterrole cluster-admin \
+  --user $(gcloud config get-value account)
+
+kubectl apply -f ./nginx-controller.yaml
+
 
 #creates an executable to be invoked that creates a git deploy key on the repo specified above
 cat <<EOF >>git-key-deploy.sh

@@ -7,9 +7,9 @@ metadata:
   annotations:
     fluxcd.io/automated: "false"
 spec:
-  releaseName: nginx-controller
+  releaseName: terraria
   chart:
-    git: https://kubernetes.github.io/ingress-nginx
+    git: git@github.com:ammilam/terraria-world-1
     path: chart
     ref: master
   values:
