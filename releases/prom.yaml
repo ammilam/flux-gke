@@ -25,6 +25,8 @@ spec:
           org_name: Main Org.
           org_role: Viewer
     prometheus:
+      service:
+        type: LoadBalancer
       ingress:
         enabled: false
         hosts: test.com
@@ -32,8 +34,6 @@ spec:
           - /
 
       prometheusSpec:
-        service:
-          type: LoadBalancer
         additionalScrapeConfigs:
         replicas: 1
         externalLabels:
