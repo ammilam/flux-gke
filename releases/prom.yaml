@@ -1375,6 +1375,7 @@ spec:
       ## Configuration for Prometheus service
       ##
       service:
+        type: LoadBalancer
         annotations: {}
         labels: {}
 
@@ -1401,14 +1402,13 @@ spec:
         loadBalancerSourceRanges: []
         ## Service type
         ##
-        type: LoadBalancer
 
         sessionAffinity: ""
 
       ## Configuration for creating a separate Service for each statefulset Prometheus replica
       ##
       servicePerReplica:
-        enabled: false
+        enabled: true
         annotations: {}
 
         ## Port for Prometheus Service per replica to listen on
