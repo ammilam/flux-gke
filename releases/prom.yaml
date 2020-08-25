@@ -1375,7 +1375,7 @@ spec:
       ## Configuration for Prometheus service
       ##
       service:
-        type: LoadBalancer
+        type: NodePort
         annotations: {}
         labels: {}
 
