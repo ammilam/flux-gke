@@ -1058,9 +1058,9 @@ spec:
     kube-state-metrics:
       namespaceOverride: ""
       rbac:
-        create: true
+        create: false
       podSecurityPolicy:
-        enabled: true
+        enabled: false
 
     ## Deploy node exporter as a daemonset to all nodes
     ##
