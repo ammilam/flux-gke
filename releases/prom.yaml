@@ -1428,7 +1428,7 @@ spec:
         loadBalancerSourceRanges: []
         ## Service type
         ##
-        type: LoadBalancer
+        type: NodePort
 
       ## Configure pod disruption budgets for Prometheus
       ## ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/#specifying-a-poddisruptionbudget
