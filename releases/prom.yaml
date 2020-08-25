@@ -25,11 +25,11 @@ spec:
           org_name: Main Org.
           org_role: Viewer
     prometheus:
-      service:
-        type: LoadBalancer
+      #service:
+        #type: LoadBalancer
       ingress:
-        enabled: false
-        hosts: test.com
+        enabled: true
+        hosts: https://${EXTERNAL_IP}/
         paths:
           - /
 
