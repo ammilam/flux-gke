@@ -480,7 +480,7 @@ spec:
       ingress:
         ## If true, Grafana Ingress will be created
         ##
-        enabled: true
+        enabled: false
 
         ## Annotations for Grafana Ingress
         ##
@@ -497,7 +497,7 @@ spec:
         ##
         # hosts:
         #   - grafana.domain.com
-        hosts: localhost
+        hosts:
 
         ## Path for grafana ingress
         path: /
