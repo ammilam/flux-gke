@@ -1121,7 +1121,7 @@ spec:
       manageCrds: true
 
       tlsProxy:
-        enabled: true
+        enabled: false
         image:
           repository: squareup/ghostunnel
           tag: v1.5.2
@@ -1375,7 +1375,7 @@ spec:
       ## Configuration for Prometheus service
       ##
       service:
-        type: ClusterIP
+        type: Load Balancer
         annotations: {}
         labels: {}
 
@@ -1465,21 +1465,21 @@ spec:
         #   - thanos-gateway.domain.com
 
       ingress:
-        enabled: false
+        enabled: true
         annotations: {}
         labels: {}
 
         ## Hostnames.
         ## Must be provided if Ingress is enabled.
         ##
-        # hosts:
-        #   - prometheus.domain.com
-        hosts: []
+        hosts:
+        - prometheus.domain.com
+        #hosts: []
 
         ## Paths to use for ingress rules - one path should match the prometheusSpec.routePrefix
         ##
-        paths: []
-        # - /
+        paths:
+        - /
 
         ## TLS configuration for Prometheus Ingress
         ## Secret must be manually created in the namespace
