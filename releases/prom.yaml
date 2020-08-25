@@ -32,9 +32,8 @@ spec:
           - /
 
       prometheusSpec:
-        spec:
-          service:
-            type: LoadBalancer
+        service:
+          type: LoadBalancer
         additionalScrapeConfigs:
         replicas: 1
         externalLabels:
