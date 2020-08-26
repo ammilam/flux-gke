@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: prometheus-ingress
+  name: grafana-ingress
   namespace: monitoring
   annotations:
     ingress.kubernetes.io/whitelist-source-range: 10.0.0.0/16 # change this range to admin IPs
@@ -11,6 +11,10 @@ spec:
   - http:
       paths:
       - backend:
-          serviceName: prometheus-operator-prometheus
-          servicePort: 9090
+          serviceName: prometheus-operator-grafana
+          servicePort: 80
         path: /
+      #- backend:
+      #    serviceName: prometheus-operator-grafana
+      #    servicePort: 80
+      #  path: /grafana
