@@ -44,7 +44,7 @@ spec:
       tty: false
       stdin: false
       service:
-        type: NodePort
+        type: LoadBalancer
         port: 7777
         annotations: {}
       #worldsize: medium
