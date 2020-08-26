@@ -12,7 +12,7 @@ spec:
       paths:
       - backend:
           serviceName: prometheus-operator-grafana
-          servicePort: 80
+          servicePort: 3000
         path: /
       #- backend:
       #    serviceName: prometheus-operator-grafana

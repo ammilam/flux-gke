@@ -558,8 +558,8 @@ spec:
       ## Passed to grafana subchart and used by servicemonitor below
       ##
       service:
-        type: LoadBalancer
-        #portName: service
+        #type:
+        portName: service
 
       ## If true, create a serviceMonitor for grafana
       ##
