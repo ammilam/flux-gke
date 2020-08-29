@@ -1953,7 +1953,7 @@ spec:
           imagePullPolicy: Always
           args:
           - --stackdriver.project-id=	exam-prep-285301 
-          - --prometheus.wal-directory=/prometheus/wal
+          - --prometheus.wal-directory=/prometheus/
           - --stackdriver.kubernetes.location=us-central1
           - --stackdriver.kubernetes.cluster-name=terraria-us-central1
 
