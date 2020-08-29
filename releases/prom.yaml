@@ -1947,7 +1947,15 @@ spec:
 
         ## Containers allows injecting additional containers. This is meant to allow adding an authentication proxy to a Prometheus pod.
         ##  if using proxy extraContainer  update targetPort with proxy container port
-        containers: []
+        containers:
+        - name: stackdriver-sidecar
+          image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
+          imagePullPolicy: Always
+          args:
+          - --stackdriver.project-id=	exam-prep-285301 
+          - --prometheus.wal-directory=/prometheus/wal
+          - --stackdriver.kubernetes.location=us-central1
+          - --stackdriver.kubernetes.cluster-name=terraria-us-central1
 
         ## InitContainers allows injecting additional initContainers. This is meant to allow doing some changes
         ## (permissions, dir tree) on mounted volumes before starting prometheus
