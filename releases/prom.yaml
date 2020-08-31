@@ -26,7 +26,7 @@ spec:
             args:
             - -c
             - |
-              export PROJECT_ID=$DEVSHELL_PROJECT_ID
+              export PROJECT_ID=${GCP_PROJECT}
               echo $PROJECT_ID
         - name: stackdriver-sidecar
           image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
