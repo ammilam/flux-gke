@@ -25,15 +25,15 @@ spec:
           command: ["/bin/sh"]
           args:
             - -c
-            |
-            export PROJECT=$PROJECT_ID
-            echo $PROJECT_ID
-            - --stackdriver.project-id=exam-prep-285301 
+            - |
+              export PROJECT=$PROJECT_ID
+              echo $PROJECT_ID
+            - --stackdriver.project-id=${PROJECT_ID}
             - --prometheus.wal-directory=/prometheus/wal
-           # - --stackdriver.kubernetes.cluster-name=terraria-us-central1
           ports:
             - name: stackdriver
               containerPort: 9091
           volumeMounts:
             - name: prometheus-prometheus-operator-prometheus-db
               mountPath: /prometheus
+
