@@ -25,7 +25,6 @@ spec:
           args:
             - --stackdriver.project-id=${PROJECT_ID}
             - --prometheus.wal-directory=/prometheus/wal
-            - --stackdriver.kubernetes.location=${REGION}
             - --stackdriver.kubernetes.cluster-name=${CLUSTER_NAME}
           ports:
             - name: stackdriver
