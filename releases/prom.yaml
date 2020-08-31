@@ -18,8 +18,7 @@ spec:
         type: NodePort
         nodePort: 30090
       prometheusSpec:
-        containers:
-          initContainers:
+        initContainers:
           - name: install
             image: alpine
             command: ['/bin/sh']
@@ -28,6 +27,7 @@ spec:
             - |
               export PROJECT_ID=${PROJECT_ID}
               echo $PROJECT_ID
+        containers:
         - name: stackdriver-sidecar
           image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
           imagePullPolicy: Always
