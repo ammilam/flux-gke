@@ -32,7 +32,7 @@ spec:
           image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
           imagePullPolicy: Always
           args:
-            - --stackdriver.project-id=${PROJECT_ID}
+           # - --stackdriver.project-id=${PROJECT_ID}
             - --prometheus.wal-directory=/prometheus/wal
            # - --stackdriver.kubernetes.cluster-name=terraria-us-central1
           ports:
