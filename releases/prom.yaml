@@ -25,14 +25,14 @@ spec:
             args:
             - -c
             - |
-              export PROJECT_ID=${PROJECT_ID}
-              echo $PROJECT_ID
+              export PROJECT=$PROJECT_ID
+              echo "This is your project: " $PROJECT
         containers:
         - name: stackdriver-sidecar
           image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
           imagePullPolicy: Always
           args:
-            - --stackdriver.project-id=${PROJECT_ID}
+            - --stackdriver.project-id=$PROJECT
             - --prometheus.wal-directory=/prometheus/wal
            # - --stackdriver.kubernetes.cluster-name=terraria-us-central1
           ports:
