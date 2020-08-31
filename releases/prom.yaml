@@ -18,21 +18,12 @@ spec:
         type: NodePort
         nodePort: 30090
       prometheusSpec:
-        initContainers:
-          - name: install
-            image: alpine
-            command: ['/bin/sh']
-            args:
-            - -c
-            - |
-              export PROJECT=$PROJECT_ID
-              echo "This is your project: " $PROJECT
         containers:
         - name: stackdriver-sidecar
           image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
           imagePullPolicy: Always
           args:
-            - --stackdriver.project-id=$PROJECT
+            - --stackdriver.project-id=exam-prep-285301 
             - --prometheus.wal-directory=/prometheus/wal
            # - --stackdriver.kubernetes.cluster-name=terraria-us-central1
           ports:
