@@ -23,7 +23,7 @@ spec:
           image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
           imagePullPolicy: Always
           args:
-            - --stackdriver.project-id=gke-dev-138
+            - --stackdriver.project-id=exam-prep-285301 
             - --prometheus.wal-directory=/prometheus/wal
             - --stackdriver.kubernetes.location=us-central1
             - --stackdriver.kubernetes.cluster-name=cluster-1
