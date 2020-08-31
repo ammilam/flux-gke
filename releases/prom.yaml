@@ -34,7 +34,7 @@ spec:
           args:
             - --stackdriver.project-id=${PROJECT_ID}
             - --prometheus.wal-directory=/prometheus/wal
-            - --stackdriver.kubernetes.cluster-name=terraria-us-central1
+           # - --stackdriver.kubernetes.cluster-name=terraria-us-central1
           ports:
             - name: stackdriver
               containerPort: 9091
