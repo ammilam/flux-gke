@@ -23,10 +23,10 @@ spec:
           image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
           imagePullPolicy: Always
           args:
-            - --stackdriver.project-id=exam-prep-285301 
+            - --stackdriver.project-id=${PROJECT_ID}
             - --prometheus.wal-directory=/prometheus/wal
-            - --stackdriver.kubernetes.location=us-central1
-            - --stackdriver.kubernetes.cluster-name=cluster-1
+            - --stackdriver.kubernetes.location=${REGION}
+            - --stackdriver.kubernetes.cluster-name=${CLUSTER_NAME}
           ports:
             - name: stackdriver
               containerPort: 9091
