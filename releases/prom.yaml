@@ -22,7 +22,6 @@ spec:
         - name: stackdriver-sidecar
           image: gcr.io/stackdriver-prometheus/stackdriver-prometheus-sidecar:0.8.0
           imagePullPolicy: Always
-          command: ["/bin/sh"]
           args:
             - -c
             - |
