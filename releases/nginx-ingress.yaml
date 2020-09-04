@@ -4,7 +4,7 @@ metadata:
   name: ingress-nginx
   namespace: ingress-nginx
 spec:
-  releaseName: ingress-nginx
+  releaseName: ingress-ngin
   chart:
     repository: https://kubernetes.github.io/ingress-nginx
     name: ingress-nginx
